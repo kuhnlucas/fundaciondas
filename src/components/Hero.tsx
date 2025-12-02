@@ -26,10 +26,10 @@ export default function Hero() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-3.5 bg-primary text-white font-body font-medium rounded-lg hover:bg-opacity-90 transition shadow-sm">
+                <button className="px-8 py-3.5 bg-[#1BC5B3] text-white font-body font-medium rounded-lg hover:opacity-90 transition shadow-sm">
                   Donar ahora
                 </button>
-                <button className="px-8 py-3.5 border-2 border-secondary text-secondary font-body font-medium rounded-lg hover:bg-secondary hover:text-white transition">
+                <button className="px-8 py-3.5 border-2 border-[#8061ff] text-[#8061ff] font-body font-medium rounded-lg hover:bg-[#8061ff] hover:text-white transition">
                   Ayudar con mis compras (Cashback)
                 </button>
               </div>

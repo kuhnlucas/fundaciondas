@@ -5,13 +5,15 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-bgCard shadow-sm">
+    // Header background changed to brand orange #fab32b as requested.
+    <header className="sticky top-0 z-50 bg-[#fab32b] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
             <div className="flex items-center gap-2">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white font-heading font-bold text-xl">
-                DAS
+              <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+                {/* Logo file expected at public/logo-das.png — replace the SVG with the real PNG when ready */}
+                <img src="/logo-das.png" alt="Logo Fundación DAS" className="w-full h-full object-contain" />
               </div>
               <div className="font-heading font-bold text-primary text-lg">
                 Fundación DAS
@@ -19,83 +21,61 @@ export default function Header() {
             </div>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-8">
-            <a href="#inicio" className="text-textMain font-body hover:text-primary transition">
-              Inicio
-            </a>
-            <a href="#quienes-somos" className="text-textMain font-body hover:text-primary transition">
-              Quiénes somos
-            </a>
-            <a href="#programas" className="text-textMain font-body hover:text-primary transition">
-              Programas
-            </a>
-            <a href="#como-ayudar" className="text-textMain font-body hover:text-primary transition">
-              Cómo ayudar
-            </a>
-            <a href="#novedades" className="text-textMain font-body hover:text-primary transition">
-              Novedades
-            </a>
-            <a href="#galeria" className="text-textMain font-body hover:text-primary transition">
-              Galería
-            </a>
-            <a href="#contacto" className="text-textMain font-body hover:text-primary transition">
-              Contacto
-            </a>
-          </nav>
+          {/* Replace desktop nav + action buttons with a universal MENU button
+              The button shows an icon + the word "MENU" and toggles the full dropdown
+              which contains all sections and action buttons. */}
+          <div className="flex items-center gap-3">
+            <button
+              className="flex items-center gap-2 bg-transparent p-0 text-white font-body font-medium hover:opacity-90 transition"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="main-navigation"
+            >
+              {isMenuOpen ? (
+                <X className="w-5 h-5 text-white" />
+              ) : (
+                <Menu className="w-5 h-5 text-white" />
+              )}
+              <span className="uppercase text-sm">{isMenuOpen ? 'CERRAR' : 'MENU'}</span>
+            </button>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <button className="px-6 py-2.5 bg-primary text-white font-body font-medium rounded-lg hover:bg-opacity-90 transition">
-              Donar ahora
-            </button>
-            <button className="px-6 py-2.5 border-2 border-primary text-primary font-body font-medium rounded-lg hover:bg-primary hover:text-white transition">
-              Comprá y ayudá
-            </button>
+            {/* Action buttons kept on the header to the right of the MENU button */}
+            <div className="flex items-center gap-3">
+              <button className="px-6 py-2.5 bg-[#1BC5B3] text-white font-body font-medium rounded-lg hover:opacity-90 transition">
+                Donar ahora
+              </button>
+              <button className="px-6 py-2.5 border-2 border-[#8061ff] text-[#8061ff] font-body font-medium rounded-lg hover:bg-[#8061ff] hover:text-white transition">
+                Comprá y ayudá
+              </button>
+            </div>
           </div>
-
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-textMain" />
-            ) : (
-              <Menu className="w-6 h-6 text-textMain" />
-            )}
-          </button>
         </div>
 
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
-            <nav className="flex flex-col gap-4">
-              <a href="#inicio" className="text-textMain font-body hover:text-primary transition">
+          <div id="main-navigation" className="w-full bg-white text-black py-4 border-t border-border">
+            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-4">
+              <a href="#inicio" className="font-body hover:text-primary transition">
                 Inicio
               </a>
-              <a href="#quienes-somos" className="text-textMain font-body hover:text-primary transition">
+              <a href="#quienes-somos" className="font-body hover:text-primary transition">
                 Quiénes somos
               </a>
-              <a href="#programas" className="text-textMain font-body hover:text-primary transition">
+              <a href="#programas" className="font-body hover:text-primary transition">
                 Programas
               </a>
-              <a href="#como-ayudar" className="text-textMain font-body hover:text-primary transition">
+              <a href="#como-ayudar" className="font-body hover:text-primary transition">
                 Cómo ayudar
               </a>
-              <a href="#novedades" className="text-textMain font-body hover:text-primary transition">
+              <a href="#novedades" className="font-body hover:text-primary transition">
                 Novedades
               </a>
-              <a href="#galeria" className="text-textMain font-body hover:text-primary transition">
+              <a href="#galeria" className="font-body hover:text-primary transition">
                 Galería
               </a>
-              <a href="#contacto" className="text-textMain font-body hover:text-primary transition">
+              <a href="#contacto" className="font-body hover:text-primary transition">
                 Contacto
               </a>
-              <div className="flex flex-col gap-3 pt-4">
-                <button className="w-full px-6 py-2.5 bg-primary text-white font-body font-medium rounded-lg hover:bg-opacity-90 transition">
-                  Donar ahora
-                </button>
-                <button className="w-full px-6 py-2.5 border-2 border-primary text-primary font-body font-medium rounded-lg hover:bg-primary hover:text-white transition">
-                  Comprá y ayudá
-                </button>
-              </div>
+              {/* Action buttons removed from dropdown (kept in header) */}
             </nav>
           </div>
         )}

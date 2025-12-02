@@ -49,8 +49,8 @@ export default function HowToHelp() {
             </div>
 
             <div className="bg-bgCard p-8 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                <ShoppingBag className="w-7 h-7 text-accent" />
+              <div className="w-14 h-14 bg-[#8061ff]/10 rounded-xl flex items-center justify-center mb-6">
+                <ShoppingBag className="w-7 h-7 text-[#8061ff]" />
               </div>
               <h4 className="text-xl font-heading font-semibold text-textMain mb-3">
                 Comprá y ayudá (Cashback)
@@ -58,7 +58,7 @@ export default function HowToHelp() {
               <p className="text-textSecondary font-body mb-6">
                 Regístrense en nuestra plataforma, compren en comercios aliados y un porcentaje se transforma en donación sin que paguen de más.
               </p>
-              <button className="w-full px-6 py-3 border-2 border-accent text-accent font-body font-medium rounded-lg hover:bg-accent hover:text-white transition">
+              <button className="w-full px-6 py-3 border-2 border-[#8061ff] text-[#8061ff] font-body font-medium rounded-lg hover:bg-[#8061ff] hover:text-white transition">
                 Explorar la plataforma de cashback
               </button>
             </div>

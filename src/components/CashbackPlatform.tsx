@@ -13,7 +13,7 @@ export default function CashbackPlatform() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-block">
-              <span className="px-3 py-1 bg-accent text-white text-sm font-body font-medium rounded-full">
+              <span className="px-3 py-1 bg-[#8061ff] text-white text-sm font-body font-medium rounded-full">
                 Nueva forma de ayudar
               </span>
             </div>
@@ -29,14 +29,14 @@ export default function CashbackPlatform() {
             <div className="space-y-3">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-[#8061ff] flex-shrink-0 mt-0.5" />
                   <span className="text-textMain font-body">{feature}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="px-8 py-3.5 bg-primary text-white font-body font-medium rounded-lg hover:bg-opacity-90 transition shadow-sm">
+              <button className="px-8 py-3.5 bg-[#8061ff] text-white font-body font-medium rounded-lg hover:opacity-90 transition shadow-sm">
                 Ir a la plataforma de cashback
               </button>
               <a
